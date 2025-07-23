@@ -4,95 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tiarra Carey - Unit Commander</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #000000, #d91d1d);
-            animation: fadeIn 1s ease-in;
-        }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .card {
-            background: white;
-            width: 360px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-            text-align: center;
-            padding: 30px 20px;
-            animation: fadeInCard 1.2s ease-in-out;
-        }
-        @keyframes fadeInCard { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .logo { width: 150px; margin-bottom: 20px; }
-        .profile {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #ffd700;
-            margin-bottom: 15px;
-        }
-        h1 { font-size: 1.5em; margin: 0; color: #000; }
-        h2 { font-size: 1em; font-weight: 400; margin: 5px 0 15px; color: #444; }
-        p.tagline { font-style: italic; font-size: 0.9em; color: #444; margin-bottom: 20px; }
-        .buttons a {
-            display: inline-block;
-            margin: 10px 5px;
-            padding: 12px 20px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .save-contact { border: 2px solid #ffd700; color: #000; background: transparent; }
-        .save-contact:hover { background: #ffd700; color: #000; }
-        .sms-btn { background: #d91d1d; color: white; }
-        .sms-btn:hover { background: #a31313; }
-        .social { margin-top: 20px; }
-        .social a { margin: 0 10px; text-decoration: none; font-size: 1.5em; color: #ffd700; transition: 0.3s; }
-        .social a:hover { color: #d91d1d; }
-        .qr-icon { width: 24px; vertical-align: middle; }
-        footer { font-size: 0.7em; color: #999; margin-top: 20px; }
-        #bio-container { margin-top: 20px; text-align: left; }
-        #bio { display: none; font-size: 0.85em; color: #333; line-height: 1.5; }
-        .toggle-btn { background: none; border: none; color: #d91d1d; font-weight: bold; cursor: pointer; margin-top: 10px; }
-    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {font-family: 'Segoe UI', sans-serif; margin:0; padding:0; background: linear-gradient(120deg,#8B0000,#FFD700); color:#222;}
+        .card {background:#fff; max-width:400px; margin:50px auto; border-radius:20px; padding:30px; text-align:center; box-shadow:0 4px 20px rgba(0,0,0,0.2);}
+        .logo {width:140px; margin-bottom:10px;}
+        .profile {width:120px; height:120px; object-fit:cover; border-radius:50%; border:4px solid #FFD700; margin-bottom:15px;}
+        h1 {font-size:1.6em; margin:10px 0 5px;}
+        h2 {font-size:1em; font-weight:400; color:#666; margin:0;}
+        p.tagline {font-style:italic; color:#444; margin:10px 0 20px;}
+        .buttons a {display:block; padding:12px; margin:10px auto; width:80%; text-decoration:none; font-weight:bold; border-radius:8px; transition:0.3s;}
+        .buttons .save {border:2px solid #FFD700; color:#000;}
+        .buttons .text {background:#d91d1d; color:white;}
+        .buttons .call {background:#32CD32; color:white;}
+        .buttons .email {background:#1E90FF; color:white;}
+        .buttons .website {background:#FFD700; color:black;}
+        .buttons a:hover {opacity:0.85;}
+        .social a {margin:0 10px; font-size:1.5em; color:#FFD700; text-decoration:none;}
+        footer {margin-top:20px; font-size:0.8em; color:#777;}
+    </style>
 </head>
 <body>
     <div class="card">
-        <img src="Screenshot_20250713_071512.jpg" alt="PRYM Logo" class="logo">
+        <img src="Screenshot_20250713_071512_OneDrive.jpg" alt="PRYM Logo" class="logo">
         <img src="20231201_113156.jpg" alt="Profile" class="profile">
         <h1>Tiarra Carey</h1>
         <h2>Unit Commander</h2>
         <p class="tagline">Strengthening the Lives of America's Youth</p>
+
         <div class="buttons">
-            <a href="tiarra-carey.vcf" download class="save-contact"><i class="fa fa-id-card"></i> Save Contact</a>
-            <a href="sms:2026432139" class="sms-btn"><i class="fa fa-comment"></i> Text Me</a>
+            <a href="tiarra-carey.vcf" class="save"><i class="fa fa-id-card"></i> Save Contact</a>
+            <a href="sms:+12026432139" class="text"><i class="fa fa-comment"></i> Text Me</a>
+            <a href="tel:+12026432139" class="call"><i class="fa fa-phone"></i> Call Me</a>
+            <a href="mailto:PotomacRiver@youngmarines.org" class="email"><i class="fa fa-envelope"></i> Email Me</a>
+            <a href="https://youngmarines.org/unit/potomacriver/page" class="website"><i class="fa fa-globe"></i> Website</a>
         </div>
+
         <div class="social">
             <a href="https://instagram.com/pryoungmarines" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://facebook.com/pryoungmarines" target="_blank"><i class="fab fa-facebook"></i></a>
             <a href="https://tiktok.com/@pryoungmarines" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="prym-qr.png" target="_blank"><img src="prym-qr.png" alt="QR Code" class="qr-icon"></a>
         </div>
-        <button class="toggle-btn" onclick="toggleBio()">Read Bio</button>
-        <div id="bio-container">
-            <p id="bio">
-                Tiarra Carey serves as the Unit Commander of the Potomac River Young Marines, a youth leadership and development program based in Washington, D.C. Under her leadership, the unit has grown into a premier example of the Young Marines’ national mission: Strengthening the lives of America's youth through teamwork, leadership, and discipline.<br><br>
-                With a strong commitment to youth empowerment, Commander Carey has expanded recruitment, increased community partnerships, and positioned the Potomac River Young Marines as a trusted resource for youth leadership training, community service, and drug demand reduction initiatives. She has spearheaded impactful projects including high-visibility Color Guard services, regional encampments, and community outreach campaigns that engage youth ages 8–18 in meaningful, character-building activities.<br><br>
-                Commander Carey’s leadership emphasizes service, accountability, and innovation. She is known for fostering an environment where young people thrive academically, personally, and physically while building the confidence and character needed to become the leaders of tomorrow.<br><br>
-                Her dedication extends beyond youth development to include community engagement and strategic fundraising, ensuring the Potomac River Young Marines remains a vital program for families, schools, and civic organizations throughout the D.C. metropolitan area.
-            </p>
+        
+        <a href="#" onclick="toggleBio()" style="display:block; margin:15px 0; color:#d91d1d; font-weight:bold;">Read Bio</a>
+        <div id="bio" style="display:none; font-size:0.9em; color:#333; text-align:left;">
+            Tiarra Carey serves as the Unit Commander of the Potomac River Young Marines...
         </div>
+
         <footer>&copy; 2025 Potomac River Young Marines</footer>
     </div>
+
     <script>
-        function toggleBio() {
+        function toggleBio(){
             const bio = document.getElementById('bio');
             bio.style.display = bio.style.display === 'block' ? 'none' : 'block';
         }
