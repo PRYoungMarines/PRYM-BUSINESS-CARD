@@ -9,22 +9,35 @@
             font-family: 'Segoe UI', sans-serif;
             margin: 0;
             padding: 0;
-            background: #f4f4f4;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .card {
             background: white;
             width: 360px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3), 0 0 20px rgba(217,29,29,0.2);
             text-align: center;
             padding: 30px 20px;
-            transition: 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            animation: fadeInCard 1.2s ease-in-out;
         }
-        .card:hover { transform: scale(1.05); }
+        @keyframes fadeInCard {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+        }
         .logo { width: 120px; margin-top: 20px; }
         .profile {
             width: 120px;
@@ -37,7 +50,7 @@
         h1 { font-size: 1.5em; margin: 0; }
         h2 { font-size: 1em; font-weight: 400; margin: 5px 0 15px; color: #666; }
         p.tagline { font-style: italic; font-size: 0.9em; color: #444; margin-bottom: 20px; }
-        .buttons a {
+        .buttons a, .share-btn {
             display: block;
             margin: 10px auto;
             width: 80%;
@@ -45,11 +58,18 @@
             text-decoration: none;
             border-radius: 8px;
             color: white;
-            background: #d91d1d;
             font-weight: bold;
             transition: 0.3s;
+            text-align: center;
+            cursor: pointer;
         }
-        .buttons a:hover { background: #b31515; }
+        .buttons a:hover, .share-btn:hover { opacity: 0.9; }
+        .save-contact { background: #0077cc; }
+        .save-contact:hover { background: #005fa3; }
+        .share-btn { background: #28a745; }
+        .share-btn:hover { background: #218838; }
+        .sms-btn { background: #ff8800; }
+        .sms-btn:hover { background: #cc6d00; }
         .social { margin-top: 20px; }
         .social a { margin: 0 10px; text-decoration: none; font-size: 1.5em; color: #d91d1d; transition: 0.3s; }
         .social a:hover { color: #222; }
@@ -64,6 +84,15 @@
             cursor: pointer;
             margin-top: 10px;
         }
+        .qr-section {
+            margin-top: 25px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            display: inline-block;
+            background: #fafafa;
+        }
+        .qr-section p { margin: 0 0 10px 0; font-weight: bold; font-size: 0.9em; }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -76,9 +105,13 @@
 
         <div class="buttons">
             <a href="tel:2026432139"><i class="fa fa-phone"></i> Call</a>
+            <a href="sms:2026432139" class="sms-btn"><i class="fa fa-comment"></i> Text Me</a>
             <a href="mailto:PotomacRiver@youngmarines.org"><i class="fa fa-envelope"></i> Email</a>
             <a href="https://youngmarines.org/unit/potomacriver/page" target="_blank"><i class="fa fa-globe"></i> Website</a>
+            <a href="tiarra-carey.vcf" download class="save-contact"><i class="fa fa-id-card"></i> Save Contact</a>
         </div>
+
+        <button class="share-btn" onclick="shareCard()"><i class="fa fa-share-alt"></i> Share This Card</button>
 
         <div class="social">
             <a href="https://instagram.com/pryoungmarines" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -96,6 +129,11 @@
             </p>
         </div>
 
+        <div class="qr-section">
+            <p>Scan to view this card:</p>
+            <img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=https://pryoungmarines.github.io/PRYM-BUSINESS-CARD/" alt="QR Code">
+        </div>
+
         <img src="Screenshot_20250713_071512.jpg" alt="PRYM Logo" class="logo">
         <footer>&copy; 2025 Potomac River Young Marines</footer>
     </div>
@@ -104,6 +142,19 @@
         function toggleBio() {
             const bio = document.getElementById('bio');
             bio.style.display = bio.style.display === 'block' ? 'none' : 'block';
+        }
+        function shareCard() {
+            const shareData = {
+                title: 'Tiarra Carey - Potomac River Young Marines',
+                text: 'Check out this digital business card!',
+                url: 'https://pryoungmarines.github.io/PRYM-BUSINESS-CARD/'
+            };
+            if (navigator.share) {
+                navigator.share(shareData).catch(err => console.log('Share failed:', err));
+            } else {
+                navigator.clipboard.writeText(shareData.url);
+                alert('Link copied to clipboard!');
+            }
         }
     </script>
 </body>
