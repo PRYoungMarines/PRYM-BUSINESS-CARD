@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tiarra Carey - Unit Commander</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <div class="card fade-in">
+    <img src="Screenshot_20250713_071512_OneDrive.jpg" alt="PRYM Logo" class="logo" />
+    <img src="20231201_113156.jpg" alt="Tiarra Carey" class="profile" />
+    <h1>Tiarra Carey</h1>
+    <h2>Unit Commander</h2>
+    <p class="tagline">Strengthening the Lives of America's Youth</p>
+    <div class="button-row">
+      <a href="tel:2026432139" class="btn call"><i class="fa fa-phone"></i> Call</a>
+      <a href="sms:2026432139" class="btn text"><i class="fa fa-comment"></i> Text</a>
+    </div>
+    <div class="button-row">
+      <a href="mailto:PotomacRiver@youngmarines.org" class="btn email"><i class="fa fa-envelope"></i> Email</a>
+      <a href="https://youngmarines.org/unit/potomacriver/page" class="btn web"><i class="fa fa-globe"></i> Website</a>
+    </div>
+    <div class="button-row">
+      <a href="tiarra-carey.vcf" download class="btn contact"><i class="fa fa-id-card"></i> Save Contact</a>
+      <button onclick="shareCard()" class="btn share"><i class="fa fa-share-alt"></i> Share</button>
+    </div>
+    <div class="social">
+      <a href="https://instagram.com/pryoungmarines" target="_blank" class="icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/pryoungmarines" target="_blank" class="icon"><i class="fab fa-facebook"></i></a>
+      <a href="https://tiktok.com/@pryoungmarines" target="_blank" class="icon"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <footer>&copy; 2025 Potomac River Young Marines</footer>
+  </div>
+  <script>
+    function shareCard() {
+      const shareData = {
+        title: 'Tiarra Carey - Unit Commander',
+        text: 'Check out this digital business card!',
+        url: window.location.href
+      };
+      if (navigator.share) {
+        navigator.share(shareData).catch(console.error);
+      } else {
+        navigator.clipboard.writeText(window.location.href);
+        alert('Link copied to clipboard!');
+      }
+    }
+  </script>
+</body>
+</html>
