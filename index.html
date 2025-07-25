@@ -3,47 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tiarra Carey | PRYM Digital Card</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <title>Tiarra Carey | PRYM Contact Card</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="Screenshot_20250713_071512_OneDrive.jpg">
 </head>
 <body>
-    <div class="spinner"></div>
-    <header class="hero">
-        <img src="20231201_113156.jpg" alt="Profile" class="hero-bg">
+    <div class="header">
+        <img src="20231201_113156.jpg" alt="Header Image" class="header-img">
         <div class="overlay"></div>
         <img src="Screenshot_20250713_071512_OneDrive.jpg" alt="PRYM Logo" class="logo">
-        <h1 class="fade-in">Tiarra Carey</h1>
-        <h2 class="fade-in">Unit Commander</h2>
-    </header>
+        <h1 class="name">Tiarra Carey</h1>
+        <p class="title">Unit Commander</p>
+    </div>
 
-    <section class="buttons fade-in">
-        <a href="tel:+12026432139" class="btn call"><i class="fas fa-phone"></i> Call</a>
-        <a href="sms:+12026432139" class="btn text"><i class="fas fa-comment"></i> Text</a>
-        <a href="mailto:PotomacRiver@youngmarines.org" class="btn email"><i class="fas fa-envelope"></i> Email</a>
-        <a href="https://youngmarines.org/unit/potomacriver/page" target="_blank" class="btn website"><i class="fas fa-globe"></i> Website</a>
-        <a href="https://youngmarines.org/unit/potomacriver/JoinVolunteer" target="_blank" class="btn gold"><i class="fas fa-user-plus"></i> Volunteers</a>
-        <a href="https://youngmarines.org/unit/potomacriver/JoinVolunteer" target="_blank" class="btn gold"><i class="fas fa-users"></i> Join Unit</a>
-        <a href="https://youngmarines.org/unit/potomacriver/ContactUnit" target="_blank" class="btn gold"><i class="fas fa-info-circle"></i> Inquiries</a>
-        <a href="https://www.zeffy.com/donation-form/7bef5292-842e-4d0a-abee-a8ae9ef167a2" target="_blank" class="btn gold"><i class="fas fa-heart"></i> Donations</a>
-        <a href="tiarra-carey.vcf" download class="btn gold"><i class="fas fa-id-card"></i> Save Contact</a>
-    </section>
+    <div class="buttons">
+        <a href="tel:1234567890" class="btn call">Call</a>
+        <a href="sms:1234567890" class="btn text">Text</a>
+        <a href="mailto:tiarra.carey@youngmarines.org" class="btn email">Email</a>
+        <a href="https://youngmarines.org/unit/potomacriver" target="_blank" class="btn website">Website</a>
+        <a href="https://youngmarines.org/unit/potomacriver/JoinVolunteer" target="_blank" class="btn volunteer">Volunteers</a>
+        <a href="https://youngmarines.org/unit/potomacriver/JoinVolunteer" target="_blank" class="btn join">Join Unit</a>
+        <a href="https://youngmarines.org/unit/potomacriver/ContactUnit" target="_blank" class="btn inquiries">Inquiries</a>
+        <a href="https://www.zeffy.com/donation-form/7bef5292-842e-4d0a-abee-a8ae9ef167a2" target="_blank" class="btn donate">Donations</a>
+        <a href="tiarra-carey.vcf" class="btn save">Save Contact</a>
+    </div>
 
-    <footer>&copy; 2025 Potomac River Young Marines</footer>
-
-    <audio id="clickSound" src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg"></audio>
-
-    <script>
-        const buttons = document.querySelectorAll('.btn');
-        const clickSound = document.getElementById('clickSound');
-        buttons.forEach(btn => btn.addEventListener('click', () => clickSound.play()));
-
-        window.addEventListener('load', () => {
-            document.querySelector('.spinner').style.display = 'none';
-            document.querySelectorAll('.fade-in').forEach(el => el.classList.add('show'));
-        });
-    </script>
+    <footer>
+        <p>&copy; 2025 Potomac River Young Marines</p>
+    </footer>
 </body>
 </html>
