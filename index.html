@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiarra Carey | PRYM Digital Card</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="spinner"></div>
+    <header class="hero">
+        <img src="20231201_113156.jpg" alt="Profile" class="hero-bg">
+        <div class="overlay"></div>
+        <img src="Screenshot_20250713_071512_OneDrive.jpg" alt="PRYM Logo" class="logo">
+        <h1 class="fade-in">Tiarra Carey</h1>
+        <h2 class="fade-in">Unit Commander</h2>
+    </header>
+
+    <section class="buttons fade-in">
+        <a href="tel:+12026432139" class="btn call"><i class="fas fa-phone"></i> Call</a>
+        <a href="sms:+12026432139" class="btn text"><i class="fas fa-comment"></i> Text</a>
+        <a href="mailto:PotomacRiver@youngmarines.org" class="btn email"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://youngmarines.org/unit/potomacriver/page" target="_blank" class="btn website"><i class="fas fa-globe"></i> Website</a>
+        <a href="https://youngmarines.org/unit/potomacriver/JoinVolunteer" target="_blank" class="btn gold"><i class="fas fa-user-plus"></i> Volunteers</a>
+        <a href="https://youngmarines.org/unit/potomacriver/JoinVolunteer" target="_blank" class="btn gold"><i class="fas fa-users"></i> Join Unit</a>
+        <a href="https://youngmarines.org/unit/potomacriver/ContactUnit" target="_blank" class="btn gold"><i class="fas fa-info-circle"></i> Inquiries</a>
+        <a href="https://www.zeffy.com/donation-form/7bef5292-842e-4d0a-abee-a8ae9ef167a2" target="_blank" class="btn gold"><i class="fas fa-heart"></i> Donations</a>
+        <a href="tiarra-carey.vcf" download class="btn gold"><i class="fas fa-id-card"></i> Save Contact</a>
+    </section>
+
+    <footer>&copy; 2025 Potomac River Young Marines</footer>
+
+    <audio id="clickSound" src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg"></audio>
+
+    <script>
+        const buttons = document.querySelectorAll('.btn');
+        const clickSound = document.getElementById('clickSound');
+        buttons.forEach(btn => btn.addEventListener('click', () => clickSound.play()));
+
+        window.addEventListener('load', () => {
+            document.querySelector('.spinner').style.display = 'none';
+            document.querySelectorAll('.fade-in').forEach(el => el.classList.add('show'));
+        });
+    </script>
+</body>
+</html>
