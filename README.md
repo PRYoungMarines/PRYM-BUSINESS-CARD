@@ -20,4 +20,4 @@ View the live site here:
 
 ---
 
-*© 2025 Potomac River Young Marines*
+© 2025 Potomac River Young Marines
