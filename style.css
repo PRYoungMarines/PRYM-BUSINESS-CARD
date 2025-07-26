@@ -1,93 +1,80 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #111;
+    background: #111;
     color: white;
     text-align: center;
 }
 
-.header-photo {
+.header-img {
     width: 100%;
     height: auto;
-    border-bottom: 5px solid #FFD700;
+    border-bottom: 4px solid #ffcc00;
 }
 
-.profile {
-    margin-top: -50px;
+.profile-section {
+    margin-top: -60px;
+    text-align: center;
 }
 
-.profile-photo {
-    width: 120px;
-    height: 120px;
+.profile-logo {
+    width: 140px;
+    height: auto;
     border-radius: 50%;
-    border: 5px solid #FFD700;
-    background: white;
-    object-fit: cover;
-    box-shadow: 0 0 20px #FFD700;
+    border: 5px solid #ffcc00;
+    background: #222;
+    padding: 5px;
+}
+
+.glow {
+    box-shadow: 0 0 20px #ffcc00, 0 0 40px #ffcc00;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 15px #ffcc00; }
+    50% { box-shadow: 0 0 30px #ffcc00; }
+    100% { box-shadow: 0 0 15px #ffcc00; }
 }
 
 h1 {
-    font-size: 2rem;
-    margin: 10px 0 5px;
+    font-size: 28px;
+    margin: 10px 0 0;
 }
 
-.title {
-    font-size: 1.2rem;
-    color: #FFD700;
+h2 {
+    font-size: 18px;
+    color: #ffcc00;
+    margin: 5px 0 20px;
 }
 
 .button-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 12px;
+    width: 90%;
     max-width: 400px;
-    margin: 30px auto;
+    margin: 0 auto;
 }
 
 .btn {
     display: block;
-    padding: 15px;
-    font-size: 1rem;
-    text-decoration: none;
-    border-radius: 8px;
+    padding: 14px 0;
+    font-size: 16px;
     font-weight: bold;
-    color: white;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid transparent;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid #ffcc00;
+    color: #ffcc00;
 }
 
-/* Hover Effects */
-.btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
-}
-
-/* Button Colors */
-.call { background-color: green; }
-.call:hover { box-shadow: 0 0 15px rgba(0, 255, 0, 0.7); }
-
-.text { background-color: red; }
-.text:hover { box-shadow: 0 0 15px rgba(255, 0, 0, 0.7); }
-
-.email, .website, .volunteer, .join, .inquiry, .save {
-    background-color: #FFD700;
-    color: black;
-}
-.email:hover, .website:hover, .volunteer:hover, .join:hover, .inquiry:hover, .save:hover {
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.9);
-}
-
-.donate {
-    background-color: #FFB300;
-    color: black;
-}
-.donate:hover {
-    box-shadow: 0 0 20px rgba(255, 179, 0, 0.9);
-}
+.btn.call { background: #0f0; color: #000; border: none; }
+.btn.text { background: #f00; color: #fff; border: none; }
+.btn:hover { transform: scale(1.05); }
 
 footer {
     margin-top: 40px;
-    padding: 20px 0;
-    font-size: 0.9rem;
+    font-size: 14px;
     color: #ccc;
 }
