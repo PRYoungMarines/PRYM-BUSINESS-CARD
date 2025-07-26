@@ -4,6 +4,26 @@ body {
     color: #FFD700;
     text-align: center;
     margin: 0;
+    overflow-x: hidden;
+}
+
+/* Smooth animation effects */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.fade-up {
+    animation: fadeUp 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .header-image img {
@@ -17,6 +37,12 @@ body {
     margin-top: -60px;
     border: 5px solid #FFD700;
     box-shadow: 0 0 20px #FFD700;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 10px #FFD700; }
+    to { box-shadow: 0 0 30px #FFD700; }
 }
 
 h1 {
@@ -50,6 +76,7 @@ h2 {
     color: #FFD700;
     border-radius: 30px;
     transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
 
 .btn:hover {
@@ -62,6 +89,7 @@ h2 {
     background: #00FF00;
     color: #000;
     border: none;
+    box-shadow: 0 4px 12px rgba(0,255,0,0.6);
 }
 
 .call:hover {
@@ -72,6 +100,7 @@ h2 {
     background: #FF0000;
     color: #fff;
     border: none;
+    box-shadow: 0 4px 12px rgba(255,0,0,0.6);
 }
 
 .text:hover {
